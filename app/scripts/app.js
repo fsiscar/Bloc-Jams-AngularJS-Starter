@@ -3,17 +3,21 @@
     $locationProvider
       .html5Mode({
         enabled: true,
-        requiredBase: false
+        requireBase: false
       });
 
     $stateProvider
-      .state('landing',{
+      .state('landing', {
         url: '/',
         templateUrl: '/templates/landing.html'
       })
-      .state('album',{
+      .state('album', {
         url: '/album',
         templateUrl: '/templates/album.html'
+      })
+      .state('collection', {
+        url: '/',
+        templateUrl: 'templates/collection.html'
       });
   }
 
