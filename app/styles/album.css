@@ -77,7 +77,7 @@ body.album {
     background-color: rgb(210, 40, 123);
 }
 
-.album-song-button span {
+.album-song-button .span {
     line-height: 28px;
 }
 
@@ -89,9 +89,9 @@ body.album {
     .album-view-details {
         text-align: center;
     }
-    
+
     .album-view-title {
-        margin-top: 0;   
+        margin-top: 0;
     }
 }
 
