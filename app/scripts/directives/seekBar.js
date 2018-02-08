@@ -45,6 +45,12 @@
           return {left: percentString()};
         };
 
+        var notifyOnChange = function(newValue) {
+          if (typeof scope.onChange === 'function') {
+            scope.onChange({value: newValue});
+          }
+        };
+        
         scope.onClickSeekBar = function(event) {
           var percent = calculatePercent(seekBar, event);
           scope.value = percent * scope.max;
@@ -60,11 +66,7 @@
             });
           });
 
-          var notifyOnChange = function(newValue) {
-            if (typeof scope.onChange === 'function') {
-              scope.onChange({value: newValue});
-            }
-          };
+
 
           $document.bind('mouseup.thumb', function() {
             $document.unbind('mousemove.thumb');
