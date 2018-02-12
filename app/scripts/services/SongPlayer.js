@@ -85,11 +85,14 @@
     SongPlayer.currentTime = null;
 
     SongPlayer.play = function(song) {
+
+
       song = song || SongPlayer.currentSong;
       if (SongPlayer.currentSong !== song) {
         setSong(song);
         playSong (song);
       } else if (SongPlayer.currentSong === song) {
+        if (!currentBuzzObject) { return; }
         if (currentBuzzObject.isPaused()) {
           playSong(song);
         }
@@ -154,7 +157,7 @@
      * @desc attribute to hold value of the volume
      * @type {Number (0-100)}
      */
-    SongPlayer.volume = null;
+    SongPlayer.volume = 80;
 
 
     /**
